@@ -38,7 +38,7 @@ class PythonGists(object):
 		else:
 			authtoken=token
 		token='token {0}'.format(authtoken)
-		data=json.dumps({"description":description,"public":public,"files":{name:{"content":content}}})
+		data=json.dumps({"description":description,"private":"on","files":{name:{"content":content}}})
 
 		if authtoken is None:
 			r=requests.post(url,data=data)
